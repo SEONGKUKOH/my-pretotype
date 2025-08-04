@@ -35,101 +35,45 @@ function Login() {
 
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h2>반려견 등록</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>이름: </label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
+<div style={{ padding: '20px', maxWidth: '480px', margin: '0 auto' }}>
+  <h2 style={{ fontSize: '24px', marginBottom: '20px' }}>반려견 등록</h2>
+  <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+    <label>이름:
+      <input type="text" name="name" value={formData.name} onChange={handleChange} required
+        style={{ width: '100%', padding: '8px', fontSize: '16px' }} />
+    </label>
 
-        <div>
-          <label>성별: </label>
-          <label>
-            <input
-              type="radio"
-              name="gender"
-              value="남"
-              checked={formData.gender === '남'}
-              onChange={handleChange}
-              required
-            />{' '}
-            남
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="gender"
-              value="여"
-              checked={formData.gender === '여'}
-              onChange={handleChange}
-              required
-            />{' '}
-            여
-          </label>
-        </div>
+    <label>성별:
+      <div style={{ display: 'flex', gap: '12px' }}>
+        <label><input type="radio" name="gender" value="남" checked={formData.gender === '남'} onChange={handleChange} /> 남</label>
+        <label><input type="radio" name="gender" value="여" checked={formData.gender === '여'} onChange={handleChange} /> 여</label>
+      </div>
+    </label>
 
-        <div>
-          <label>견종: </label>
-          <input
-            type="text"
-            name="breed"
-            value={formData.breed}
-            onChange={handleChange}
-            required
-          />
-        </div>
+    <label>견종:
+      <input type="text" name="breed" value={formData.breed} onChange={handleChange} required
+        style={{ width: '100%', padding: '8px', fontSize: '16px' }} />
+    </label>
 
-        <div>
-          <label>체중(kg): </label>
-          <input
-            type="number"
-            name="weight"
-            value={formData.weight}
-            onChange={handleChange}
-            required
-          />
-        </div>
+    <label>체중(kg):
+      <input type="number" name="weight" value={formData.weight} onChange={handleChange} required
+        style={{ width: '100%', padding: '8px', fontSize: '16px' }} />
+    </label>
 
-        <div>
-          <label>중성화 여부: </label>
-          <label>
-            <input
-              type="radio"
-              name="neutered"
-              value="예"
-              checked={formData.neutered === '예'}
-              onChange={handleChange}
-              required
-            />{' '}
-            예
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="neutered"
-              value="아니오"
-              checked={formData.neutered === '아니오'}
-              onChange={handleChange}
-              required
-            />{' '}
-            아니오
-          </label>
-        </div>
+    <label>중성화 여부:
+      <div style={{ display: 'flex', gap: '12px' }}>
+        <label><input type="radio" name="neutered" value="예" checked={formData.neutered === '예'} onChange={handleChange} /> 예</label>
+        <label><input type="radio" name="neutered" value="아니오" checked={formData.neutered === '아니오'} onChange={handleChange} /> 아니오</label>
+      </div>
+    </label>
 
-        <div style={{ marginTop: '20px' }}>
-          <button type="submit" disabled={!isFormValid}>
-            시작하기
-          </button>
-        </div>
-      </form>
-    </div>
+    <button type="submit" disabled={!isFormValid}
+      style={{ padding: '12px', fontSize: '16px', backgroundColor: '#4CAF50', color: '#fff', border: 'none', borderRadius: '8px' }}>
+      시작하기
+    </button>
+  </form>
+</div>
+
   );
 }
 

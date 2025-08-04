@@ -9,28 +9,21 @@ function Camera() {
   };
 
   return (
-    <div style={{ padding: '20px', paddingBottom: '60px' }}>
-      <h1>카메라 촬영 화면</h1>
-      <p>사료 또는 간식 라벨을 촬영해주세요.</p>
+<div style={{ padding: '20px', paddingBottom: '80px', maxWidth: '480px', margin: '0 auto', textAlign: 'center' }}>
+  <h2 style={{ fontSize: '22px' }}>카메라 촬영</h2>
+  <p style={{ fontSize: '14px', color: '#555' }}>사료 또는 간식 라벨을 촬영해주세요.</p>
 
-      {/* 이미지 */}
-      <div style={{ marginBottom: '20px' }}>
-        <img
-          src="/img/camera.png" // ✅ public/img/camera.png
-          alt="프로필 이미지"
-          style={{
-            width: '240px',
-            height: '240px',
-            borderRadius: '50%',
-            objectFit: 'contain',
-            backgroundColor: '#eee',
-          }}
-        />
-      </div>
+  <img src="/img/camera.png" alt="카메라"
+    style={{ width: '200px', height: '200px', objectFit: 'contain', margin: '20px auto', borderRadius: '12px', backgroundColor: '#f0f0f0' }} />
 
-      <button onClick={handleAnalyze}>분석하기</button>
-      <BottomNav />
-    </div>
+  <button onClick={handleAnalyze}
+    style={{ padding: '12px 20px', fontSize: '16px', backgroundColor: '#2196F3', color: '#fff', border: 'none', borderRadius: '8px' }}>
+    분석하기
+  </button>
+
+  <BottomNav />
+</div>
+
   );
 }
 

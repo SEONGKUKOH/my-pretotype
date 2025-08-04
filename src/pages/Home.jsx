@@ -3,6 +3,8 @@ import BottomNav from '../components/BottomNav';
 
 function Home() {
   const [formData, setFormData] = useState(null);
+const [food, setFood] = useState(['인섹트업', '로얄캐닌', '나우사료']); // ✅ 배열로 선언
+const [nutrition, setNutrition] = useState(['고단백 곤충성분', '고단백 고칼슘', '고단백 저지방']); // ✅ 배열로 선언
 
   useEffect(() => {
     const stored = localStorage.getItem('formData');
@@ -12,84 +14,50 @@ function Home() {
   }, []);
 
   return (
-    <div style={{ padding: '20px', paddingBottom: '60px' }}>
-      <h1>홈 화면</h1>
+<div style={{ padding: '20px', paddingBottom: '80px', maxWidth: '480px', margin: '0 auto' }}>
+  <h1 style={{ fontSize: '24px' }}>홈 화면</h1>
+  <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+    <img src="/img/happy.png" alt="프로필 이미지"
+      style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover', backgroundColor: '#eee' }} />
+  </div>
 
-      {/* 프로필 이미지 */}
-      <div style={{ marginBottom: '20px' }}>
-        <img
-          src="/img/happy.png"
-          alt="프로필 이미지"
-          style={{
-            width: '120px',
-            height: '120px',
-            borderRadius: '50%',
-            objectFit: 'contain',
-            backgroundColor: '#eee',
-          }}
-        />
-      </div>
-
- 
-
-      {/* 사용자 정보 */}
-      {formData ? (
-        <div>
-          <p><strong>이름:</strong> {formData.name}</p>
-          <p><strong>성별:</strong> {formData.gender}</p>
-          <p><strong>견종:</strong> {formData.breed}</p>
-          <p><strong>체중:</strong> {formData.weight}kg</p>
-          <p><strong>중성화 여부:</strong> {formData.neutered}</p>
-        </div>
-      ) : (
-        <p>입력 정보가 없습니다.</p>
-      )}
-
-  
-
-      {/* 추천 사료 리스트 */}
-      {formData?.name && (
-        <div>
-         {/* 추천 텍스트 */}
-      {formData?.name && (
-        <div style={{ marginTop: '24px' }}>
-          <p><strong>{formData.name}에게 추천되는 사료에요!</strong></p>
-        </div>
-      )}
-          {[1, 2, 3].map((item, index) => (
-            <div key={index} style={{
-              display: 'flex',
-              alignItems: 'center',
-              marginBottom: '16px',
-              padding: '10px',
-              border: '1px solid #ddd',
-              borderRadius: '8px'
-            }}>
-              <img
-                src={`/img/petfood_${index + 1}.png`}  // ✅ public/img/ 아래에 위치해야 함
-                alt={`사료 ${index + 1}`}
-                style={{
-                  width: '80px',
-                  height: '80px',
-                  marginRight: '16px',
-                  borderRadius: '8px',
-                  objectFit: 'contain',
-                  backgroundColor: '#f3f3f3'
-                }}
-              />
-              <div>
-                <h4 style={{ margin: '0 0 4px 0' }}>사료 추천 {index + 1}</h4>
-                <p style={{ margin: 0, fontSize: '14px', color: '#555' }}>
-                  {formData.name}에게 딱 맞는 고단백 저알러지 사료입니다.
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-
-      <BottomNav />
+  {formData && (
+    <div style={{ fontSize: '14px', lineHeight: '1.6' }}>
+      <p><strong>이름:</strong> {formData.name}</p>
+      <p><strong>성별:</strong> {formData.gender}</p>
+      <p><strong>견종:</strong> {formData.breed}</p>
+      <p><strong>체중:</strong> {formData.weight}kg</p>
+      <p><strong>중성화 여부:</strong> {formData.neutered}</p>
     </div>
+  )}
+
+  {formData?.name && (
+    <div style={{ marginTop: '24px' }}>
+      <p><strong>{formData.name}에게 추천되는 사료에요!</strong></p>
+      {food.map((foodName, index) => (
+        <div key={index} style={{
+          display: 'flex',
+          alignItems: 'center',
+          marginBottom: '16px',
+          padding: '12px',
+          border: '1px solid #ddd',
+          borderRadius: '8px',
+          backgroundColor: '#fff'
+        }}>
+          <img src={`/img/petfood_${index + 1}.png`} alt={`사료 ${index + 1}`}
+            style={{ width: '60px', height: '60px', marginRight: '12px', borderRadius: '8px', objectFit: 'contain' }} />
+          <div>
+            <div style={{ fontWeight: 'bold', fontSize: '15px' }}>{foodName}</div>
+            <div style={{ fontSize: '13px', color: '#666' }}>{nutrition[index]}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
+
+  <BottomNav />
+</div>
+
   );
 }
 
