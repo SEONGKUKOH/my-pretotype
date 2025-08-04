@@ -5,12 +5,18 @@ function BottomNav() {
   const current = location.pathname;
 
   const linkStyle = (path) => ({
-    flex: 1,
-    textAlign: 'center',
-    padding: '10px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1, // ✅ 각각의 버튼이 가로 너비를 동일하게 나눔
+    height: '100%',
+    fontSize: '24px',
     fontWeight: current === path ? 'bold' : 'normal',
-    color: current === path ? '#007bff' : '#333',
+    color: current === path ? '#fff' : '#333',
+    backgroundColor: current === path ? '#007bff' : '#f5f5f5',
     textDecoration: 'none',
+    transition: 'all 0.2s ease-in-out',
+    borderRight: path === '/home' ? '1px solid #ccc' : 'none', // ✅ 구분선 (선택)
   });
 
   return (
@@ -20,8 +26,9 @@ function BottomNav() {
       left: 0,
       right: 0,
       display: 'flex',
-      background: '#eee',
+      background: '#ddd',
       borderTop: '1px solid #ccc',
+      height: '10vh',
     }}>
       <Link to="/home" style={linkStyle('/home')}>홈</Link>
       <Link to="/camera" style={linkStyle('/camera')}>카메라</Link>
