@@ -45,7 +45,7 @@ const [formData, setFormData] = useState({
         margin: '0 auto',
         display: 'flex',
         flexDirection: 'column',
-        gap: '12px'
+        gap: '13px'
       }}>
         <h2 style={{ fontSize: '24px', marginBottom: '20px', textAlign: 'center' }}>반려견 등록</h2>
 
