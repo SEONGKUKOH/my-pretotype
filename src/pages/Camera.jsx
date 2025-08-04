@@ -25,7 +25,7 @@ function Camera() {
         alignItems: 'center',
         gap: '16px'
       }}>
-        <h2 style={{ fontSize: '22px' }}>카메라 촬영</h2>
+        <h2 style={{ fontSize: '30px' }}>카메라 촬영</h2>
         <p style={{ fontSize: '20px', color: '#555' }}>사료 또는 간식 라벨을 촬영해주세요.</p>
 
         <img

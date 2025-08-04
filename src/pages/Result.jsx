@@ -13,10 +13,10 @@ const [food] = useState(['인섹트업', '로얄캐닌', '나우사료']); // �
 
   return (
   <div style={{ padding: '20px', paddingBottom: '80px', maxWidth: '480px', margin: '0 auto' }}>
-  <h2 style={{ fontSize: '22px', textAlign: 'center' }}>분석 결과</h2>
+  <h2 style={{ fontSize: '30px', textAlign: 'center' }}>분석 결과</h2>
 
   <button style={{ padding: '10px', marginTop: '12px', width: '100%', borderRadius: '8px', backgroundColor: '#f1f1f1' }}>
-    <strong>맞춤형 분석</strong>
+    <strong style={{ fontSize: '30px', textAlign: 'center' }}>맞춤형 분석</strong>
   </button>
   <p style={{ fontSize: '14px', lineHeight: '1.6' }}>
     이 사료는 ‘조단백질 35%’, ‘닭고기’, ‘치즈 분말’이 포함되어 있어요.<br />
@@ -25,7 +25,7 @@ const [food] = useState(['인섹트업', '로얄캐닌', '나우사료']); // �
   </p>
 
   <button style={{ padding: '10px', marginTop: '12px', width: '100%', borderRadius: '8px', backgroundColor: '#f1f1f1' }}>
-    <strong>일반 분석</strong>
+    <strong style={{ fontSize: '30px', textAlign: 'center' }}>일반 분석</strong>
   </button>
   <p style={{ fontSize: '14px', lineHeight: '1.6' }}>
     이 사료는 관절 건강(글루코사민), 장 건강(프락토올리고당) 기능이 있으며,<br />

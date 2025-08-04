@@ -15,7 +15,7 @@ const [nutrition] = useState(['고단백 곤충성분', '고단백 고칼슘', '
 
   return (
 <div style={{ padding: '20px', paddingBottom: '80px', maxWidth: '480px', margin: '0 auto' }}>
-  <h1 style={{ fontSize: '24px', textAlign: 'center' }}>홈 화면</h1>
+  <h1 style={{ fontSize: '30px', textAlign: 'center' }}>홈 화면</h1>
   <div style={{ textAlign: 'center', marginBottom: '20px' }}>
     <img src="/img/happy.png" alt="프로필 이미지"
       style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover', backgroundColor: '#eee' }} />
