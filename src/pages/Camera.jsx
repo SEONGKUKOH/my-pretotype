@@ -26,14 +26,14 @@ function Camera() {
         gap: '16px'
       }}>
         <h2 style={{ fontSize: '22px' }}>카메라 촬영</h2>
-        <p style={{ fontSize: '14px', color: '#555' }}>사료 또는 간식 라벨을 촬영해주세요.</p>
+        <p style={{ fontSize: '20px', color: '#555' }}>사료 또는 간식 라벨을 촬영해주세요.</p>
 
         <img
           src="/img/camera.png"
           alt="카메라"
           style={{
-            width: '200px',
-            height: '200px',
+            width: '250px',
+            height: '250px',
             objectFit: 'contain',
             borderRadius: '12px',
             backgroundColor: '#f0f0f0'
@@ -49,7 +49,8 @@ function Camera() {
             color: '#fff',
             border: 'none',
             borderRadius: '8px',
-            marginTop: '10px'
+            marginTop: '10px',
+            width: '250px'
           }}
         >
           분석하기

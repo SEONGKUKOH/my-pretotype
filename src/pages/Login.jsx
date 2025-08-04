@@ -35,6 +35,7 @@ const [formData, setFormData] = useState({
   return (
     <div style={{
       padding: '16px',
+      minHeight: '100vh', // ✅ 화면 전체 높이
       maxWidth: '100%',
       boxSizing: 'border-box',
       overflowX: 'hidden'
