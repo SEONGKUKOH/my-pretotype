@@ -15,21 +15,37 @@ const [nutrition] = useState(['고단백 곤충성분', '고단백 고칼슘', '
 
   return (
 <div style={{ padding: '20px', paddingBottom: '80px', maxWidth: '480px', margin: '0 auto' }}>
-  <h1 style={{ fontSize: '24px' }}>홈 화면</h1>
+  <h1 style={{ fontSize: '24px', textAlign: 'center' }}>홈 화면</h1>
   <div style={{ textAlign: 'center', marginBottom: '20px' }}>
     <img src="/img/happy.png" alt="프로필 이미지"
       style={{ width: '100px', height: '100px', borderRadius: '50%', objectFit: 'cover', backgroundColor: '#eee' }} />
   </div>
 
-  {formData && (
-    <div style={{ fontSize: '14px', lineHeight: '1.6' }}>
-      <p><strong>이름:</strong> {formData.name}</p>
-      <p><strong>성별:</strong> {formData.gender}</p>
-      <p><strong>견종:</strong> {formData.breed}</p>
-      <p><strong>체중:</strong> {formData.weight}kg</p>
-      <p><strong>중성화 여부:</strong> {formData.neutered}</p>
-    </div>
-  )}
+{formData && (
+  <div
+    style={{
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-between',
+      fontSize: '14px',
+      lineHeight: '1.6',
+      marginBottom: '16px',
+      padding: '12px',
+      border: '1px solid #ddd',
+      borderRadius: '8px',
+      backgroundColor: '#fff',
+      gap: '12px'
+    }}
+  >
+    <div style={{ flex: '0 0 48%' }}><strong>이름:</strong> {formData.name}</div>
+    <div style={{ flex: '0 0 48%' }}><strong>성별:</strong> {formData.gender}</div>
+    <div style={{ flex: '0 0 48%' }}><strong>견종:</strong> {formData.breed}</div>
+    <div style={{ flex: '0 0 48%' }}><strong>체중:</strong> {formData.weight}kg</div>
+    <div style={{ flex: '0 0 48%' }}><strong>알러지:</strong> {formData.alergy}</div>
+    <div style={{ flex: '0 0 48%' }}><strong>중성화:</strong> {formData.neutered}</div>
+  </div>
+)}
+
 
   {formData?.name && (
     <div style={{ marginTop: '24px' }}>

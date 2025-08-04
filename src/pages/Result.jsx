@@ -13,7 +13,7 @@ const [food] = useState(['인섹트업', '로얄캐닌', '나우사료']); // �
 
   return (
   <div style={{ padding: '20px', paddingBottom: '80px', maxWidth: '480px', margin: '0 auto' }}>
-  <h2 style={{ fontSize: '22px' }}>분석 결과</h2>
+  <h2 style={{ fontSize: '22px', textAlign: 'center' }}>분석 결과</h2>
 
   <button style={{ padding: '10px', marginTop: '12px', width: '100%', borderRadius: '8px', backgroundColor: '#f1f1f1' }}>
     <strong>맞춤형 분석</strong>
