@@ -3,8 +3,8 @@ import BottomNav from '../components/BottomNav';
 
 function Home() {
   const [formData, setFormData] = useState(null);
-const [food, setFood] = useState(['인섹트업', '로얄캐닌', '나우사료']); // ✅ 배열로 선언
-const [nutrition, setNutrition] = useState(['고단백 곤충성분', '고단백 고칼슘', '고단백 저지방']); // ✅ 배열로 선언
+const [food] = useState(['인섹트업', '로얄캐닌', '나우사료']); // ✅ 배열로 선언
+const [nutrition] = useState(['고단백 곤충성분', '고단백 고칼슘', '고단백 저지방']); // ✅ 배열로 선언
 
   useEffect(() => {
     const stored = localStorage.getItem('formData');

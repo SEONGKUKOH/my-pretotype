@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import BottomNav from '../components/BottomNav';
 function Result() {
   const [formData, setFormData] = useState(null);
-const [food, setFood] = useState(['인섹트업', '로얄캐닌', '나우사료']); // ✅ 배열로 선언
+const [food] = useState(['인섹트업', '로얄캐닌', '나우사료']); // ✅ 배열로 선언
 
   useEffect(() => {
     const stored = localStorage.getItem('formData');
